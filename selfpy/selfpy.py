@@ -88,7 +88,7 @@ class messages():
         elif r.status_code == 429:
             raise ratelimit("ratelimit")
         elif r.status_code == 404:
-            raise not_found("channel_not_found")
+            return {"status":"channel_not_found"}
     def send(text,channel_id):
         '''Send message to a channel (channel id with "" !, and return informations in json ! (Check docs) )'''
 
@@ -111,4 +111,4 @@ class messages():
         elif r.status_code == 429:
             raise ratelimit("ratelimit")
         elif r.status_code == 404:
-            raise not_found("channel_not_found")
+            return {"status":"channel_not_found"}
